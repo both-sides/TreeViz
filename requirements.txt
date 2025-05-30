@@ -1,0 +1,6 @@
+anytree           # (optional) for tree-class support
+graphviz          # to export/render .dot files
+networkx          # in-Python graph model + layouts
+matplotlib        # draw with networkx
+PyQt5             # or tkinter if I'd want to
+
