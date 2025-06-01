@@ -1,3 +1,5 @@
+treeviz . [--json|--yaml|--dot|--html] [--max-depth N]
+
 ### 3. `setup.py`
 ```python
 from setuptools import setup, find_packages
