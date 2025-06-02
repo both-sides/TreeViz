@@ -1,6 +1,10 @@
 import os
+import sys
+import stat
+
 from .model import Node
 from .config import DEFAULTS
+from .fs_
 
 def walk(root_path, max_depth = DEFAULTS["max_depth"], follow_symlinks = False):
     #TODO: implement recursive scan with cycle detection
