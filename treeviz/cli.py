@@ -1,15 +1,14 @@
 import argparse
 import sys
 
-from .config import DEFAULTS
 from .walker import walk
 
 def main():
     parser = argparse.ArgumentParser(prog = "treeviz", description = "helps visualize file tree structure, and also provides TUI file explorer")
     parser.add_argument("path", nargs = "?", default = ".")
-    parser.add_argument("--max-depth", type = int, default = DEFAULTS["max_depth"], help="Maximum recursion depth (root = 0).")
+    parser.add_argument("--max-depth", type = int, default = 5, help="Maximum recursion depth (root = 0).")
     parser.add_argument("--json", action = "store_true")
-    parser.add_argument("--max-entries", type=int, default=DEFAULTS["max_entries_per_node"], help="Max entries to show per directory; remaining are truncated.")
+    parser.add_argument("--max-entries", type=int, default=100, help="Max entries to show per directory; remaining are truncated.")
     parser.add_argument("--follow-symlinks", action="store_true", help="If set, will follow symlinks to directories (with cycle detection).")
 
 
