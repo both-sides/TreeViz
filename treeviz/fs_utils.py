@@ -1,9 +1,11 @@
 #I'm trying to catch permission errors or file not found when trying to list a directory.
 
 import os 
-import stat
+#import stat
 
-class UnreadableDirectory(Exception):
+class UnreadableDirectory(Exception): #Signal that a directory cannot be read (e.g. permission denied).
+    pass 
+
 
 def safe_scandir(path):
     try:
@@ -13,6 +15,11 @@ def safe_scandir(path):
     except(PermissionError, FileNotFoundError, OSError) as e:
         raise UnreadableDirectory(str(e)) # should wrap this custom exception so that walker can catch it
 
-    def is_dir(entry, follow_syslinks): # should return true if entry is a directory , and should honor syslink flag
-        try:
+
+def is_dir(entry, follow_symlinks): # should return true if entry is a directory , and should honor symlink flag
+    try:
+        return entry.is_dir(follow_symlinks = follow_symlinks) #.is_dir here is a method from os.DirEntry object, not a recursive call
+    except OSError:
+        return False #if the stat fails treat as non-dir
+
 
