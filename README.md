@@ -16,7 +16,7 @@ It combines efficient recursive directory traversal with flexible visualizations
 - Works cross-platform
 
 ## 📸 Demo
-*(Add GIF or screenshot here)*
+*(In progress)*
 
 ## 🛠️ Tech Stack
 Python, Graphviz, NetworkX, Tkinter/PyQt
