@@ -22,4 +22,16 @@ def is_dir(entry, follow_symlinks): # should return true if entry is a directory
     except OSError:
         return False #if the stat fails treat as non-dir
 
+def count_nodes(node):
+    files = 0 
+    dirs = 0
+    stack = [node]
+    while stack:
+        current = stack.pop()
+        if current.children:
+            dirs += 1
+            stack.extend(current.children)
+        else:
+            files += 1
+    return files, dirs
 

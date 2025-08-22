@@ -2,6 +2,7 @@ import argparse
 import sys
 
 from .walker import walk
+from .fs_utils import count_nodes 
 
 def main():
     parser = argparse.ArgumentParser(prog = "treeviz", description = "helps visualize file tree structure, and also provides TUI file explorer")
@@ -25,6 +26,8 @@ def main():
             ):
 
         _print_node(node)
+        files, dirs = count_nodes(node)
+        print(f"\n{dirs} directories, {files} files") 
 
 def _print_node(node, prefix=""):
     """

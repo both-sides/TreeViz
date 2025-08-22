@@ -8,7 +8,7 @@ from .model import Node
 from .config import DEFAULTS
 from .fs_utils import safe_scandir, is_dir, UnreadableDirectory
 
-def walk(root_path, max_depth=DEFAULTS["max_depth"], max_entries_per_node=100, follow_symlinks=False):
+def walk(root_path, max_depth=DEFAULTS["max_depth"], max_entries_per_node=1000, follow_symlinks=False):
     """
     Perform a depth‐first traversal of the filesystem, starting at root_path.
     Yields Node instances (with children lists) for each directory‐or‐file.
