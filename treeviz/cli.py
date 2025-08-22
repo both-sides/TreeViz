@@ -18,7 +18,7 @@ def main():
 
     #TODO: route to correct formatter or TUI
     for node in walk(
-            root = args.path, 
+            root_path = args.path, 
             max_depth = args.max_depth,
             max_entries_per_node = args.max_entries,
             follow_symlinks = args.follow_symlinks
