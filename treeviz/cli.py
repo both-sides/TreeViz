@@ -4,6 +4,12 @@ import sys
 from .walker import walk
 from .fs_utils import count_nodes 
 
+if args.tui:
+    from treeviz.ui.tui import run_tui
+    run_tui("TODO") #implement run_tui function and put arguments here
+    return #exit after tui is implemented
+
+
 def main():
     parser = argparse.ArgumentParser(prog = "treeviz", description = "helps visualize file tree structure, and also provides TUI file explorer")
     parser.add_argument("path", nargs = "?", default = ".")
@@ -11,6 +17,7 @@ def main():
     parser.add_argument("--json", action = "store_true")
     parser.add_argument("--max-entries", type=int, default=100, help="Max entries to show per directory; remaining are truncated.")
     parser.add_argument("--follow-symlinks", action="store_true", help="If set, will follow symlinks to directories (with cycle detection).")
+    parser.add_argument("--tui", action="store_true", help="Runs interactive terminal UI")
 
 
     #TODO: add flags for other formats
