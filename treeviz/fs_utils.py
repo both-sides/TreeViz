@@ -35,3 +35,32 @@ def count_nodes(node):
             files += 1
     return files, dirs
 
+def list_children(
+        path: str,
+        follow_symlinks: bool,
+        max_entries: int | None = None,
+):
+    """
+    Returns (dirs, files, truncated_count). Each element is (name, full_path, is_directory).
+    """
+    try:
+        entries = list(safe_scandir(path))
+    except Exception:
+        raise UnreadableDirectory(f"Cannot read directory: {path}")
+    
+    # Directories first, alphabetical
+    entries.sort(key=lambda e: (not is_dir(e, follow_symlinks), e.name.lower()))
+
+    total = len(entries)
+    if max_entries is not None and total > max_entries:
+        entries = entries[:max_entries]
+        truncated = total - max_entries
+    else:
+        truncated = 0
+
+    out = []
+    for e in entries:
+        full_path = e.path  # already absolute from scandir(parent)
+        out.append((e.name, full_path, is_dir(e, follow_symlinks)))
+
+    return out, truncated

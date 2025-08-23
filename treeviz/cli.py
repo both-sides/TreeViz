@@ -4,11 +4,6 @@ import sys
 from .walker import walk
 from .fs_utils import count_nodes 
 
-if args.tui:
-    from treeviz.ui.tui import run_tui
-    run_tui("TODO") #implement run_tui function and put arguments here
-    return #exit after tui is implemented
-
 
 def main():
     parser = argparse.ArgumentParser(prog = "treeviz", description = "helps visualize file tree structure, and also provides TUI file explorer")
@@ -25,13 +20,27 @@ def main():
     args = parser.parse_args()
 
     #TODO: route to correct formatter or TUI
-    for node in walk(
-            root_path = args.path, 
-            max_depth = args.max_depth,
-            max_entries_per_node = args.max_entries,
-            follow_symlinks = args.follow_symlinks
-            ):
 
+    # If TUI flag is set, run TUI and exit early
+    if args.tui:
+        try:
+            from treeviz.ui.tui import run_tui  # this file uses textual/rich
+        except ModuleNotFoundError:
+            print("TUI requires extra deps. Install with: pip install -e '.[tui]'", file=sys.stderr)
+            sys.exit(1)
+        run_tui(
+            root_path=args.path,
+            follow_symlinks=args.follow_symlinks,
+            max_entries=args.max_entries,
+        )
+        return # exit after tui is implemented
+
+    for node in walk(
+        root_path=args.path,
+        max_depth=args.max_depth,
+        max_entries_per_node = args.max_entries,
+        follow_symlinks = args.follow_symlinks
+        ):
         _print_node(node)
         files, dirs = count_nodes(node)
         print(f"\n{dirs} directories, {files} files") 
