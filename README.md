@@ -46,6 +46,16 @@ It combines efficient recursive directory traversal with flexible visualizations
 ```bash
 git clone https://github.com/both-sides/TreeViz.git
 cd TreeViz
+pip install -r requirements/requirements.txt
+# optional:
+    pip install -r requirements/requirements-tui.txt
+    pip install -r requirements/requirements-gui.txt
+    pip install -r requirements/requirements-legacy.txt
+    pip install -r requirements/requirements-dev.txt
+pip install -e .
+
+
+
 pip install -e .
 ```
 

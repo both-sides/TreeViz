@@ -1,0 +1,12 @@
+#core
+rich>=13.7.0
+textual>=0.57.0
+typer>=0.12.5
+PyYAML>=6.0.1
+platformdirs>=4.2.2
+pathspec>=0.12.1
+psutil>=5.9.8
+humanfriendly>=10.0
+networkx>=3.3
+graphviz>=0.20.3
+anytree>=2.12.1

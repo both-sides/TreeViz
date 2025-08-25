@@ -1,7 +1,0 @@
-anytree    
-graphviz         
-networkx          
-matplotlib        
-PyQt5             
-urwid>=2.1.2
-PyYAML>=6.0
