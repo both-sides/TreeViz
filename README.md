@@ -67,7 +67,7 @@ pip install -e .
 ```bash
 
 # Traverse and print a directory tree
-treeviz ~/ --depth 2 --max-entries 50
+treeviz ~/ --max-entries 50
 
 # Follow symlinks and show summary counts
 treeviz /etc --follow-symlinks --summary
