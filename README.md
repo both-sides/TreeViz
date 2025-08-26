@@ -70,7 +70,7 @@ pip install -e .
 treeviz ~/ --max-entries 50
 
 # Follow symlinks and show summary counts
-treeviz /etc --follow-symlinks --summary
+treeviz /etc --follow-symlinks
 
 # Launch the interactive TUI (work in progress)
 treeviz ~/ --tui
