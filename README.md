@@ -46,30 +46,34 @@ It combines efficient recursive directory traversal with flexible visualizations
 ```bash
 git clone https://github.com/both-sides/TreeViz.git
 cd TreeViz
+
+#recommended (optional): create a python virtual enviroment
+    python -m venv .venv
+    source .venv/bin/activate
+
 pip install -r requirements/requirements.txt
+
 # optional:
     pip install -r requirements/requirements-tui.txt
     pip install -r requirements/requirements-gui.txt
     pip install -r requirements/requirements-legacy.txt
     pip install -r requirements/requirements-dev.txt
-pip install -e .
-
-
 
 pip install -e .
+
 ```
 
 ## 🔧 Usage
 ```bash
 
 # Traverse and print a directory tree
-treeviz ~/projects --depth 2 --max-entries 50
+treeviz ~/ --depth 2 --max-entries 50
 
 # Follow symlinks and show summary counts
 treeviz /etc --follow-symlinks --summary
 
 # Launch the interactive TUI (work in progress)
-treeviz ~/projects --tui
+treeviz ~/ --tui
 ```
 
 ## 📍 Roadmap
