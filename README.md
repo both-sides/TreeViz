@@ -34,8 +34,8 @@ It combines efficient recursive directory traversal with flexible visualizations
 <img width="494" height="617" alt="image" src="https://github.com/user-attachments/assets/4fcb0697-a625-4199-92b1-3bc559c5dda7" />
 
 with --tui cli flag 
-<img width="739" height="1007" alt="image" src="https://github.com/user-attachments/assets/e118b025-7c63-48e6-948f-1ea005ceba97" />
 
+<img width="739" height="1007" alt="image" src="https://github.com/user-attachments/assets/e118b025-7c63-48e6-948f-1ea005ceba97" />
 
 
 
