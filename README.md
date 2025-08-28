@@ -32,6 +32,8 @@ It combines efficient recursive directory traversal with flexible visualizations
 
 ## 📸 Demo
 *<img width="494" height="617" alt="image" src="https://github.com/user-attachments/assets/4fcb0697-a625-4199-92b1-3bc559c5dda7" />
+<img width="950" height="993" alt="image" src="https://github.com/user-attachments/assets/d3a4e098-5136-4c77-85a2-ff46a4885ec3" />
+
 *
 
 ---
