@@ -106,6 +106,7 @@ class TreeVizApp(App):
                 child.allow_expand = True
                 self.dirs_count += 1
             else:
+                child.allow_expand = False
                 self.files_count += 1
 
         if truncated:
