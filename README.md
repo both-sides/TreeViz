@@ -47,7 +47,7 @@ It combines efficient recursive directory traversal with flexible visualizations
 git clone https://github.com/both-sides/TreeViz.git
 cd TreeViz
 
-#recommended (optional): create a python virtual enviroment
+#recommended (but optional if your distribution allows global pip installation): create a python virtual enviroment
     python -m venv .venv
     source .venv/bin/activate
 
